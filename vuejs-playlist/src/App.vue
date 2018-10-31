@@ -1,11 +1,8 @@
 <template>
   <div>
-    <app-header>
-    </app-header>
-    <app-ninjas>
-    </app-ninjas>
-    <app-footer>
-    </app-footer>
+    <app-header></app-header>
+    <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -23,6 +20,14 @@ export default {
   },
   data () {
     return {
+      ninjas: [
+        {name: 'Michael', speciality: 'Vue Components', show: false},
+        {name: 'Jeffrey', speciality: 'HTML Wizardry', show: false},
+        {name: 'Peter', speciality: 'Click Events', show: false},
+        {name: 'Jonathan', speciality: 'Conditionals', show: false},
+        {name: 'Timothy', speciality: 'Webpack', show: false},
+        {name: 'Greg', speciality: 'Data Diggin', show: false}
+      ]
     }
   }
 }

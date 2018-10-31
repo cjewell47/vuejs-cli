@@ -11,16 +11,15 @@
 
 <script>
   export default {
+    props: {
+      ninjas: {
+        type: Array,
+        required: true
+      }
+    },
     data () {
       return {
-        ninjas: [
-          {name: 'Michael', speciality: 'Vue Components', show: false},
-          {name: 'Jeffrey', speciality: 'HTML Wizardry', show: false},
-          {name: 'Peter', speciality: 'Click Events', show: false},
-          {name: 'Jonathan', speciality: 'Conditionals', show: false},
-          {name: 'Timothy', speciality: 'Webpack', show: false},
-          {name: 'Greg', speciality: 'Data Diggin', show: false}
-        ]
+
       }
     }
   }
