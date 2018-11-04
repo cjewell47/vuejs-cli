@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 v-on:click="changeTitle">{{ title }}</h1>
   </header>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   },
   data () {
     return {
+    }
+  },
+  methods: {
+    changeTitle: function() {
+      this.$emit('changeTitleEvent', 'Vue Wizards');
     }
   }
 }
