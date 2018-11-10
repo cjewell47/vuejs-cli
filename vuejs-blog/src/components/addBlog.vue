@@ -8,13 +8,13 @@
       <textarea v-model.lazy.trim="blog.content"></textarea>
       <div id="checkboxes">
         <p>Blog Categories:</p>
-        <label>Ninjas</label>
+        <label>Thugs</label>
         <input type="checkbox" value="ninjas" v-model="blog.categories" />
-        <label>Wizards</label>
+        <label>Players</label>
         <input type="checkbox" value="wizards" v-model="blog.categories" />
-        <label>Mario</label>
+        <label>Ballers</label>
         <input type="checkbox" value="mario" v-model="blog.categories" />
-        <label>Cheese</label>
+        <label>Everyone else</label>
         <input type="checkbox" value="cheese" v-model="blog.categories" />
       </div>
       <label>Author:</label>
@@ -24,8 +24,8 @@
     </form>
     <div id="preview">
       <h3>Preview blog</h3>
-      <p>Blog title: {{ blog.title }}</p>
-      <p>Blog content:</p>
+      <p>Title: {{ blog.title }}</p>
+      <p>Content:</p>
       <p style="white-space: pre">{{ blog.content }}</p>
       <p>Blog Categories:</p>
       <ul>
@@ -46,7 +46,7 @@ export default {
         categories: [],
         author: ''
       },
-      authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator']
+      authors: ['Hard Harry', 'Johnny Jerkoff', 'William Murderface']
     }
   },
   methods: {
