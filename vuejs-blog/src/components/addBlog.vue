@@ -17,30 +17,36 @@
         <label>Cheese</label>
         <input type="checkbox" value="cheese" v-model="blog.categories" />
       </div>
+      <label>Author:</label>
+      <select v-model="blog.author">
+        <option v-for="author in authors">{{ author }}</option>
+      </select>
     </form>
     <div id="preview">
       <h3>Preview blog</h3>
-      <p>Title: {{ blog.title }}</p>
-      <p>Content:</p>
+      <p>Blog title: {{ blog.title }}</p>
+      <p>Blog content:</p>
       <p style="white-space: pre">{{ blog.content }}</p>
-      <p>Categories:</p>
+      <p>Blog Categories:</p>
       <ul>
         <li v-for="category in blog.categories">{{ category }}</li>
       </ul>
+      <p>Author: {{ blog.author }}</p>
     </div>
   </div>
 </template>
 
 <script>
-// Imports
 export default {
   data () {
     return {
       blog: {
         title: '',
         content: '',
-        categories: []
-      }
+        categories: [],
+        author: ''
+      },
+      authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator']
     }
   },
   methods: {
@@ -49,35 +55,36 @@ export default {
 </script>
 
 <style>
-#add-blog * {
-  box-sizing: border-box;
-}
-#add-blog {
-  margin: 20px auto;
-  max-width: 500px;
-}
-label {
-  display: block;
-  margin: 20px 0 10px;
-}
-input[type="text"], textarea {
-  display: block;
-  width: 100%;
-  padding: 8px;
-}
-#preview {
-  padding: 10px 20px;
-  border: 1px dotted #ccc;
-  margin: 30px 0;
-}
-h3 {
-  margin-top: 10px;
-}
-#checkboxes input {
-  display: inline-block;
-  margin-right: 10px;
-}
-#checkboxes label{
-  display: inline-block;
-}
+  #add-blog * {
+    box-sizing: border-box;
+  }
+  #add-blog {
+    margin: 20px auto;
+    max-width: 500px;
+  }
+  label {
+    display: block;
+    margin: 20px 0 10px;
+  }
+  input[type="text"], textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
+  #preview {
+    padding: 10px 20px;
+    border: 1px dotted #ccc;
+    margin: 30px 0;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+  #checkboxes input {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  #checkboxes label {
+    display: inline-block;
+    margin-top: 0;
+  }
 </style>
