@@ -4,6 +4,11 @@ import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
 
+Vue.filter('to-uppercase', function(value){
+    return value.toUpperCase();
+});
+
+
 Vue.directive('rainbow', {
   bind(el, binding, vnode) {
     el.style.color = '#' + Math.random().toString(16).slice(2, 8);
