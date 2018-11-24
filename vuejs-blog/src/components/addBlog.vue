@@ -9,13 +9,13 @@
       <div id="checkboxes">
         <p>Blog Categories:</p>
         <label>Thugs</label>
-        <input type="checkbox" value="ninjas" v-model="blog.categories" />
+        <input type="checkbox" value="Thugs" v-model="blog.categories" />
         <label>Players</label>
-        <input type="checkbox" value="wizards" v-model="blog.categories" />
+        <input type="checkbox" value="Players" v-model="blog.categories" />
         <label>Ballers</label>
-        <input type="checkbox" value="mario" v-model="blog.categories" />
+        <input type="checkbox" value="Ballers" v-model="blog.categories" />
         <label>Everyone else</label>
-        <input type="checkbox" value="cheese" v-model="blog.categories" />
+        <input type="checkbox" value="Everyone else" v-model="blog.categories" />
       </div>
       <label>Author:</label>
       <select v-model="blog.author">
@@ -56,11 +56,7 @@ export default {
   },
   methods: {
     post: function() {
-      this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-        title: this.blog.title,
-        body: this.blog.content,
-        userId: 1
-      }).then(function(data){
+      this.$http.post('https://vuejs-blog-1689c.firebaseio.com/posts.json', this.blog).then(function(data){
         console.log(data);
         this.submitted = true;
       });
